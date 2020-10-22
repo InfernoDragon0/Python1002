@@ -8,10 +8,15 @@ def test():
     print(cv_dataset2.head(5))
     print(cv_droprows.head(10))
 
+    dfT = cv_dataset2.T
+    output = dfT.to_json()
+    print(output)
+    sys.stdout.flush()
+
+
     #test commit
     #yy i cannot committ 
 test()
     #hello is this a finally ????????? 
     # testing cw
     #sab test
-test()

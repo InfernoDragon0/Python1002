@@ -11,22 +11,22 @@ app.listen(port, () => {
 app.get('/test', (req,res) => {
     var process = spawn('python', ['./pyscripts/main.py'])
     process.stdout.on('data', function (data) {
-        var options = {
-            chart: {
-              type: 'line'
-            },
-            series: [{
-              name: 'sales',
-              data: data
-            }],
-            xaxis: {
-              categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
-            }
-          }
+        // var options = {
+        //     chart: {
+        //       type: 'line'
+        //     },
+        //     series: [{
+        //       name: 'sales',
+        //       data: data
+        //     }],
+        //     xaxis: {
+        //       categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+        //     }
+        //   }
           
-          var chart = new ApexCharts(document.querySelector("#chart"), options);
+        //   var chart = new ApexCharts(document.querySelector("#chart"), options);
           
-          chart.render();
-        res.send("<script></script>");
+        //   chart.render();
+        res.send(data.toString());
     });
 })
