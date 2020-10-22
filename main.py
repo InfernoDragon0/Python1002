@@ -9,7 +9,7 @@ def test():
     print(cv_droprows.head(10))
 
     #test commit
-    #yy i cannot commit whyyyyTT
+    #yy i cannot committ 
 test()
     #hello is this a finally ????????? 
     # testing cw
