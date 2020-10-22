@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = 3002;
+var port = 3003;
 var spawn = require('child_process').spawn;
 
 
