@@ -19,9 +19,5 @@ def test():
         sys.stdout.flush()
 
 
-    #test commit
-    #yy i cannot committ 
 test()
-    #hello is this a finally ????????? 
-    # testing cw
-    #sab test
+
