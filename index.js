@@ -9,7 +9,9 @@ app.listen(port, () => {
 })
 
 app.get('/test', (req,res) => {
-    var process = spawn('python', ['./pyscripts/main.py'])
+    console.log("something connected")
+    var process = spawn('python', ['./main.py'])
+    var finalData = "start: "
     process.stdout.on('data', function (data) {
         // var options = {
         //     chart: {
@@ -27,6 +29,18 @@ app.get('/test', (req,res) => {
         //   var chart = new ApexCharts(document.querySelector("#chart"), options);
           
         //   chart.render();
-        res.send(data.toString());
+        console.log(data.toString())
+        finalData += data.toString()
     });
+    process.stderr.on('data', function (data) {
+      console.log(data.toString());
+      finalData += data.toString()
+  });
+    process.stdout.on('end', function () {
+      res.send(finalData)
+  });
+  process.on('end', function (data) {
+    console.log(finalData)
+    res.send(finalData)
+  })
 })
