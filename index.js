@@ -36,14 +36,11 @@ app.get('/test', (req,res) => {
       console.log(data.toString());
       finalData += data.toString()
   });
-    process.stdout.on('end', function (data) {
-      console.log(data.toString());
-      finalData += data.toString()
+    process.stdout.on('end', function () {
       res.send(finalData)
   });
   process.on('end', function (data) {
-    console.log(data.toString());
-    finalData += data.toString()
+    console.log(finalData)
     res.send(finalData)
   })
 })
