@@ -9,11 +9,8 @@ def test():
     print(cv_droprows.head(10))
 
     #test commit
-<<<<<<< HEAD
 test()
-# testing cw
-=======
     #Jerome Testing
     #hello is this a finally ????????? 
+    # testing cw
 test()
->>>>>>> d18961a2e1da6ff28b194a6a610e3f109bb11317
