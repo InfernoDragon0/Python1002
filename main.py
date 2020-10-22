@@ -7,15 +7,9 @@ def test():
     print(covid_df.head(10)) #debug printing first 10 lines
     print(cv_dataset2.head(5))
     print(cv_droprows.head(10))
-    #testtest
 
     #test commit
-<<<<<<< HEAD
 test()
-=======
-test()
-    #Jerome Testing
     #hello is this a finally ????????? 
     # testing cw
 test()
->>>>>>> e16b2c45b7359e566aef9d60876627565e5f0ced
