@@ -9,7 +9,8 @@ app.listen(port, () => {
 })
 
 app.get('/test', (req,res) => {
-    var process = spawn('python', ['./pyscripts/main.py'])
+    console.log("something connected")
+    var process = spawn('python', ['./main.py'])
     process.stdout.on('data', function (data) {
         // var options = {
         //     chart: {
