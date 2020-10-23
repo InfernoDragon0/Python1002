@@ -5,7 +5,7 @@ var spawn = require('child_process').spawn;
 
 
 app.listen(port, () => {
-    console.log("server ready")
+    console.log("server started in port " + port)
 })
 
 app.get('/test', (req,res) => {
