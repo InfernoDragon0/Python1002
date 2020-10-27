@@ -1,6 +1,58 @@
 <html>
-    <p>data</p>
-    {{{body}}}
-    <p>chart data: {{chartData}}</p>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+</head>
+
+<body>
+    <div id="chart"></div>
+    <p>chart stuff</p>
+    {{{ body }}}
+</body>
+
+<script>
+    var testjson = JSON.parse({{{ json chartData }}});
+    console.log(testjson);
+
+    seriesData = []
+
+    for (var json in testjson) {
+        seriesData.push({ x: testjson[json].Date, y: testjson[json]["Daily Confirmed"] })
+        //seriesData.push()
+    }
+
+    var options = {
+        chart: {
+            height: 350,
+            type: 'bar',
+        },
+        dataLabels: {
+            enabled: false
+        },
+        series: [],
+        title: {
+            text: 'test',
+        },
+        noData: {
+            text: 'Loading...'
+        }
+    }
+
+    var chart = new ApexCharts(
+        document.querySelector("#chart"),
+        options
+    );
+
+    chart.render();
+
+    chart.updateSeries([{
+        name: 'Daily Cases',
+        data: seriesData
+    }])
+
+
+
+</script>
 
 </html>

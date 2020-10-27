@@ -10,7 +10,8 @@ def test():
         #print(cv_dataset2.head(5))
         #print(cv_droprows.head(10))
 
-        dfT = cv_dataset2.T
+        cv_dataset3 = covid_df[["Date","Daily Confirmed"]]
+        dfT = cv_dataset3.T
         output = dfT.to_json()
         print(output)
         sys.stdout.flush()

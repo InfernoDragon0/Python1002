@@ -5,6 +5,7 @@ var path = require('path');
 var port = 5000;
 var spawn = require('child_process').spawn;
 var hbs = require('express-handlebars');
+var helper = hbs.create({});
 
 app.listen(port, () => {
     console.log("server started in port " + port)
@@ -18,6 +19,9 @@ app.engine( 'hbs', hbs( {
   partialsDir: __dirname + '/views/partials/'
 }));
 
+helper.handlebars.registerHelper('json', function (content) {
+  return JSON.stringify(content);
+})
 
 app.use(express.static('public'))
 
