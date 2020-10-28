@@ -25,28 +25,25 @@ helper.handlebars.registerHelper('json', function (content) {
 
 app.use(express.static(__dirname + '/public'))
 
+
 app.get('/', (req, res) => {
   res.render('home', { layout: 'blank' })
 
 })
 
-app.get('/test', (req, res) => {
+app.get('/data', (req, res) => {
   var process = spawn('python', ['./main.py'])
   var finalData = ""
   process.stdout.on('data', function (data) {
-    //console.log(data.toString())
     finalData += data.toString()
   });
   process.stderr.on('data', function (data) {
-    //console.log(data.toString());
-    finalData += data.toString()
+    console.log(data.toString());
   });
   process.stdout.on('end', function () {
-    res.render('index', { layout: 'default', chartData: finalData })
+    res.render('index', { layout: 'default', chartData: finalData.replace("\r\n", "") })
   });
   process.on('end', function () {
-    ///console.log(finalData)
-    //res.send(finalData)
   })
 })
 

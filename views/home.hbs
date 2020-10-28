@@ -5,11 +5,14 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>COVID 19 Deaths Datasets</title>
 </head>
 
 <body>
     <div class="topbar">
-        <div class="logo">TEST</div>
+        <div class="logo"></div>
         <div class="nav">
             <a class="links" href="/about">About Us</a>
             <a class="links" href="/data">Datasets</a>
@@ -46,50 +49,91 @@
                 accusamus porro neque vero incidunt odio odit? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Commodi doloribus facere reiciendis fuga fugit rerum dolorem explicabo, necessitatibus vitae quidem aut,
                 deserunt, saepe repudiandae voluptate obcaecati adipisci voluptates soluta vero!</p>
-                <br>
+            <br>
 
             <p class="description">View more like this in our datasets page</p>
             <br>
             <div class="altbutton">Datasets</div>
         </div>
-
-
     </div>
 
     <div class="summary">
-        <p class="bigheading">Statistics at a glance/Summary</p>
+        <p class="bigheading">Statistics at a glance</p>
         <br>
         <p class="description center">Click on the summary to view in depth charts</p>
         <br>
         <div class="stats">
-            <p class="summaryheader center">1</p>
-            <p class="center">Deaths</p>
+            <p class="summaryheader center">57987</p>
+            <p class="center">Total Cases</p>
         </div>
         <div class="stats">
-            <p class="heading center">1</p>
-            <p class="center">Deaths</p>
+            <p class="summaryheader center">104</p>
+            <p class="center">Active Cases</p>
 
         </div>
         <div class="stats">
-            <p class="heading center">1</p>
-            <p class="center">Deaths</p>
+            <p class="summaryheader center">57883</p>
+            <p class="center">Recoveries</p>
         </div>
         <div class="stats">
-            <p class="heading center">1</p>
+            <p class="summaryheader center">28</p>
             <p class="center">Deaths</p>
         </div>
-        
+
     </div>
 
     <div class="features">
-        <p class="heading">Features</p>
-        <p class="description">description about Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-            adipisci commodi aliquid aliquam aperiam placeat aut sequi suscipit veniam blanditiis tempore hic iusto,
-            accusamus porro neque vero incidunt odio odit? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Commodi doloribus facere reiciendis fuga fugit rerum dolorem explicabo, necessitatibus vitae quidem aut,
-            deserunt, saepe repudiandae voluptate obcaecati adipisci voluptates soluta vero!</p>
-    </div>
+        <div class="featuresleft">
+            <p class="heading"><i class="material-icons md-48">dashboard</i></p>
+            <p class="heading">Dataset Features</p>
+            <p class="description">description about Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos
+                adipisci commodi aliquid aliquam aperiam placeat aut sequi suscipit veniam blanditiis tempore hic iusto,
+                accusamus porro neque vero incidunt odio odit? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Commodi doloribus facere reiciendis fuga fugit rerum dolorem explicabo, necessitatibus vitae quidem aut,
+                deserunt, saepe repudiandae voluptate obcaecati adipisci voluptates soluta vero!</p>
+        </div>
 
+        <div class="featuresright">
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">view_compact</i></p>
+                <p class="description">View</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">import_export</i></p>
+                <p class="description">Export</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">search</i></p>
+                <p class="description">Search</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">analytics</i></p>
+                <p class="description">Statistics</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">legend_toggle</i></p>
+                <p class="description">Analysis</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">science</i></p>
+                <p class="description">Research</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="prefooter">'</div>
+      
+      <div class="footer">
+          <p class="center">Copyright &copy; 2020</p>
+          <p class="description">
+              <a class="ln center" href="/about">About Us</a>
+                |
+          <a class="ln center" href="/data">Datasets</a>
+                |
+          <a class="ln center" href="/reference">References</a>
+          </p>
+      </div>
 
 </body>
 
@@ -183,11 +227,9 @@
     };
 
     var chart = new ApexCharts(document.querySelector("#data1"), options);
-
     chart.render();
 
     var chart2 = new ApexCharts(document.querySelector("#data2"), options);
-
     chart2.render();
 </script>
 

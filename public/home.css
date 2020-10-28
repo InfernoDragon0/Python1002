@@ -31,11 +31,13 @@ a {
 
 .logo {
     height: 100%;
+    width: 55px;
     float: left;
-    margin: 15px;
-    line-height: 35px;
     font-weight: 700;
     color: white;
+    background-image: url('./logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .nav {
@@ -71,7 +73,7 @@ a {
 }
 
 .altbutton {
-    background-color: purple;
+    background-color: red;
     color: #fff;
     width: 200px;
     height: 55px;
@@ -116,8 +118,8 @@ a {
 .description {
     font-size: 16px;
     font-weight: 300;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .aboutcovid {
@@ -148,8 +150,9 @@ a {
 }
 
 .features {
-    background-color: lightgray;
-    width: 100%;
+    width: 80%;
+    margin: 10% 10%;
+    height: 280px;
 }
 
 .material-icons.md-18 { font-size: 18px; }
@@ -193,14 +196,76 @@ a {
     background-color: white;
     box-shadow: 0 11px 43px 0 rgba(84,93,120,.1);
     float: left;
+    transition: all 0.2s linear; 
+}
+
+.stats:hover {
+    -webkit-transform: translateX(0) translateY(-5px);
+    transform: translateX(0) translateY(-5px);
 }
 
 .center {
     text-align: center;
 }
 
-.summaryheading {
+.summaryheader {
     font-size: 24px;
     font-weight: 300;
-    margin: 20px;
+    margin: 10px;
+}
+
+.featuresleft {
+    width: 60%;
+    float: left;
+    height: 100%;
+}
+
+.featuresright {
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+
+.featurebox {
+    width: 42%;
+    margin: 4%;
+    height: 100px;
+    float: left;
+    background-color: white;
+    box-shadow: 0 11px 43px 0 rgba(84,93,120,.1);
+    text-align: center;
+    transition: all 0.2s linear;
+}
+
+.featurebox:hover {
+    -webkit-transform: translateX(0) translateY(-5px);
+    transform: translateX(0) translateY(-5px);
+}
+
+.accent {
+    color: red;
+}
+
+.prefooter {
+    background-color: #8D6E63;
+    width: 100%;
+    height: 20px;
+}
+
+.footer {
+    background-color: #6D4C41;
+    width: 100%;
+    height: 100px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+}
+
+.ln {
+    color: white;
+    transition: all 0.2s linear;
+}
+
+.ln:hover {
+    color: lime;
 }

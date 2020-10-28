@@ -6,32 +6,232 @@
 </head>
 
 <body>
-    
-       
-    <h1>Covid 19 Analyzer</h1>
-    <div id="chart" class="box"></div>
-    <p>chart stuff</p>
-    <br/>
-    <div id="linechart" class="box"></div>
-    {{{ body }}}
-   
+    {{{body}}}
+    <div class="chart-wrapper">
+        <p>Covid 19 Analyzer</p>
+        <div id="chart1" class="box"></div>
+        <p>Short description about the data</p>
+    </div>
 
-</div>
+    <div class="chart-wrapper">
+        <p>Covid 20 Analyzer</p>
+        <div id="chart2" class="box"></div>
+        <p>asdasdad</p>
+    </div>
 
-    
+
+    <div class="chart-wrapper">
+        <p>Covid 21 Analyzer</p>
+        <div id="chart3" class="box"></div>
+        <p>dsadasda</p>
+    </div>
+
+    <p>Select Month filter
+        <select name="monthly" id="monthly">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select></p>
+    <button onclick="monthlyData()">Press to view monthly data</button>
+    <button onclick="monthlySumData()">Press to view month summation data</button>
+    <button onclick="dailyData()">Press to daily data</button>
+
+    <div class="customchart">
+        <p>Filter/Build your own chart (this is not working yet, will it ever be coded idk)</p>
+        <select name="chartfilter" id="chartfilter" multiple>
+
+        </select>
+
+        <div id="chartcustom" class="box"></div>
+    </div>
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
+    <img src="test.gif" style="float:left;" />
 </body>
 
 <script>
-    var testjson = JSON.parse({{{ json chartData }}});
-    console.log(testjson);
+    function monthlyData() {
+        var sel = document.getElementById("monthly").value
+        chart1.updateSeries([{
+            name: 'Daily Cases',
+            data: seriesDataAmonth[sel - 6].tempMonthA
+        }])
 
-    seriesData = []
+        chart2.updateSeries([{
+            name: 'Active',
+            data: seriesDataBmonth[sel - 6].tempMonthB,
+        }, {
+            name: 'Isolation',
+            data: seriesDataB2month[sel - 6].tempMonthB2
+        }])
 
-    for (var json in testjson) { // this is test bar chart
-        seriesData.push({ x: testjson[json].Date, y: testjson[json]["Daily Confirmed"]})
+        chart3.updateSeries([{
+            name: 'Daily Cases3',
+            data: seriesDataCmonth[sel - 6].tempMonthC
+        }])
     }
 
-    var options = {
+    function monthlySumData() {
+        chart1.updateSeries([{
+            name: 'Daily Cases',
+            data: seriesDataAsum
+        }])
+
+        chart2.updateSeries([{
+            name: 'Active',
+            data: seriesDataBsum,
+        }, {
+            name: 'Isolation',
+            data: seriesDataB2sum
+        }])
+
+        chart3.updateSeries([{
+            name: 'Daily Cases3',
+            data: seriesDataCsum
+        }])
+    }
+
+    function dailyData() {
+        chart1.updateSeries([{
+            name: 'Daily Cases',
+            data: seriesDataA
+        }])
+
+        chart2.updateSeries([{
+            name: 'Active',
+            data: seriesDataB,
+        }, {
+            name: 'Isolation',
+            data: seriesDataB2
+        }])
+
+        chart3.updateSeries([{
+            name: 'Daily Cases3',
+            data: seriesDataC
+        }])
+    }
+
+    var testjson = {{{ chartData }}}
+    //var testjson = JSON.parse({{{ json chartData }}});
+    console.log(testjson);
+
+    seriesDataA = []
+    seriesDataAmonth = []
+    seriesDataAsum = []
+
+    seriesDataB = []
+    seriesDataBsum = []
+    seriesDataBmonth = []
+
+    seriesDataB2 = []
+    seriesDataB2sum = []
+    seriesDataB2month = []
+
+    seriesDataC = []
+    seriesDataCsum = []
+    seriesDataCmonth = []
+
+    filters = testjson['searchables']
+
+    seriesA = JSON.parse(testjson['a'])
+    seriesB = JSON.parse(testjson['b'])
+    seriesC = JSON.parse(testjson['c'])
+
+
+    seriesASum = testjson['summontha']
+    seriesBSum = testjson['summonthb']
+    seriesCSum = testjson['summonthc']
+
+    for (var json in seriesA) { // this is test bar chart
+        seriesDataA.push({ x: seriesA[json].x, y: seriesA[json].y })
+    }
+
+    for (var i = 6; i < 11; i++) {
+        seriesDataAsum.push({ x: i, y: seriesASum[i] })
+        seriesDataBsum.push({ x: i, y: seriesBSum[i] })
+        seriesDataB2sum.push({ x: i, y: seriesBSum[i * 10] })
+        seriesDataCsum.push({ x: i, y: seriesCSum[i] })
+
+        parsedMonthA = JSON.parse(testjson['sortmontha'][i])
+        tempMonthA = []
+        for (var json in parsedMonthA) {
+            tempMonthA.push({ x: parsedMonthA[json].x, y: parsedMonthA[json].y })
+        }
+        seriesDataAmonth.push({ tempMonthA })
+
+        parsedMonthB = JSON.parse(testjson['sortmonthb'][i])
+        tempMonthB = []
+        for (var json in parsedMonthB) {
+            tempMonthB.push({ x: parsedMonthB[json].x, y: parsedMonthB[json].y })
+        }
+        seriesDataBmonth.push({ tempMonthB })
+        parsedMonthB2 = JSON.parse(testjson['sortmonthb'][i])
+        tempMonthB2 = []
+        for (var json in parsedMonthB2) {
+            tempMonthB2.push({ x: parsedMonthB2[json].x, y: parsedMonthB2[json].z })
+        }
+        seriesDataB2month.push({ tempMonthB2 })
+
+        parsedMonthC = JSON.parse(testjson['sortmonthc'][i])
+        tempMonthC = []
+        for (var json in parsedMonthC) {
+            tempMonthC.push({ x: parsedMonthC[json].x, y: parsedMonthC[json].y })
+        }
+        seriesDataCmonth.push({ tempMonthC })
+    }
+
+    for (var json in seriesB) { // this is test bar chart
+        seriesDataB.push({ x: seriesB[json].x, y: seriesB[json].y })
+        seriesDataB2.push({ x: seriesB[json].x, y: seriesB[json].z })
+    }
+
+    for (var json in seriesC) { // this is test bar chart
+        seriesDataC.push({ x: seriesC[json].x, y: seriesC[json].y })
+    }
+
+    for (var json in seriesC) { // this is test bar chart
+        seriesDataC.push({ x: seriesC[json].x, y: seriesC[json].y })
+    }
+
+    var options1 = {
         chart: {
             height: 350,
             type: 'bar',
@@ -47,22 +247,101 @@
         },
         noData: {
             text: 'Loading...'
+        },
+        xaxis: {
+            tickAmount: 4
         }
     }
 
-    var chart = new ApexCharts(
-        document.querySelector("#chart"),
-        options
+    var options2 = {
+        chart: {
+            height: 350,
+            type: 'bar',
+            stacked: true,
+            foreColor: '#FFFFFF'
+
+        },
+        dataLabels: {
+            enabled: false
+        },
+        series: [],
+        title: {
+            text: 'Active Cases',
+        },
+        noData: {
+            text: 'Loading...'
+        },
+        xaxis: {
+            tickAmount: 4
+        }
+    }
+
+    var options3 = {
+        chart: {
+            height: 350,
+            type: 'bar',
+            foreColor: '#FFFFFF'
+
+        },
+        dataLabels: {
+            enabled: false
+        },
+        series: [],
+        title: {
+            text: 'Daily Recovered',
+        },
+        noData: {
+            text: 'Loading...'
+        },
+        xaxis: {
+            tickAmount: 4
+        }
+    }
+
+    var chart1 = new ApexCharts(
+        document.querySelector("#chart1"),
+        options1
     );
 
-    chart.render();
+    var chart2 = new ApexCharts(
+        document.querySelector("#chart2"),
+        options2
+    );
 
-    chart.updateSeries([{
+    var chart3 = new ApexCharts(
+        document.querySelector("#chart3"),
+        options3
+    );
+
+    chart1.render();
+    chart2.render();
+    chart3.render();
+
+    chart1.updateSeries([{
         name: 'Daily Cases',
-        data: seriesData
+        data: seriesDataA
     }])
 
-</script>
+    chart2.updateSeries([{
+        name: 'Active',
+        data: seriesDataB,
+    }, {
+        name: 'Isolation',
+        data: seriesDataB2
+    }])
 
+    chart3.updateSeries([{
+        name: 'Daily Cases3',
+        data: seriesDataC
+    }])
+
+    var selectBox = document.getElementById('chartfilter');
+
+    for (var i = 0, l = filters.length; i < l; i++) {
+        var option = filters[i];
+        selectBox.options.add(new Option(filters[i], filters[i]));
+    }
+
+</script>
 
 </html>
