@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heroimage {
+    width: 100%;
+    height: 600px;
+    background-position: center center;
+    background-size: cover;
+    background-image: url('./hero.jpg');
+    background-repeat: no-repeat;
+}
+
+.topbar {
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    background-color: #00000088;
+    z-index: 999;
+}
+
+.logo {
+    height: 100%;
+    float: left;
+    margin: 15px;
+    line-height: 35px;
+    font-weight: 700;
+    color: white;
+}
+
+.nav {
+    height: 100%;
+    float: right;
+    line-height: 65px;
+}
+
+.nav .links {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s linear;
+    font-weight: 300;
+}
+
+.nav .links:hover {
+    color: lime;
+}
+
+.herobutton {
+    color: #fff;
+    background-color: #00000000;
+    border: 1px solid white;
+    width: 240px;
+    height: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+    transition: all 0.5s linear;
+}
+
+.altbutton {
+    background-color: purple;
+    color: #fff;
+    width: 200px;
+    height: 55px;
+    border-radius: 5px;
+    float:left;
+    text-align: center;
+    line-height: 55px;
+    transition: all 0.3s linear;
+}
+
+.altbutton:hover {
+    background-color: #AB47BC;
+}
+
+.herobutton:hover {
+    color: lime;
+    border: 1px solid lime;
+}
+
+.centerheading {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding: 200px 0;
+    color: white;
+}
+
+.centerheading div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 20px;
+}
+
+.description {
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.aboutcovid {
+    width: 70%;
+    padding: 0% 15%;
+    height: 500px;
+}
+
+.sampledatasets {
+    width: 40%;
+    float:left;
+}
+
+.rightdesc {
+    vertical-align: center;
+}
+
+.data {
+    width: 80%;
+    margin: 3%;
+    background-color: white;
+    box-shadow: 0 11px 43px 0 rgba(84,93,120,.1);
+    
+}
+
+.floaty {
+    animation: move-one 10s ease-in-out infinite;
+}
+
+.features {
+    background-color: lightgray;
+    width: 100%;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+@keyframes move-one {
+    0% {
+        -webkit-transform: translateX(0) translateY(5px);
+        transform: translateX(0) translateY(5px);
+    }
+    50% {
+        -webkit-transform: translateX(0) translateY(-5px);
+        transform: translateX(0) translateY(-5px);
+    }
+    100% {
+        -webkit-transform: translateX(0) translateY(5px);
+        transform: translateX(0) translateY(5px);
+    }
+}
+
+.bigheading {
+    font-size: 48px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.summary {
+    width: 80%;
+    margin: 0 10%;
+    height: 280px;
+    background-color: white;
+}
+
+.stats {
+    width: 20%;
+    height: 100px;
+    padding: 1.5%;
+    margin: 1%;
+    background-color: white;
+    box-shadow: 0 11px 43px 0 rgba(84,93,120,.1);
+    float: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.summaryheading {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 20px;
+}

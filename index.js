@@ -8,11 +8,11 @@ var hbs = require('express-handlebars');
 var helper = hbs.create({});
 
 app.listen(port, () => {
-    console.log("server started in port " + port)
+  console.log("server started in port " + port)
 })
 app.set('view engine', 'hbs');
 
-app.engine( 'hbs', hbs( {
+app.engine('hbs', hbs({
   extname: 'hbs',
   defaultView: 'default',
   layoutsDir: __dirname + '/views/layouts/',
@@ -25,19 +25,24 @@ helper.handlebars.registerHelper('json', function (content) {
 
 app.use(express.static(__dirname + '/public'))
 
-app.get('/test', (req,res) => {
-    var process = spawn('python', ['./main.py'])
-    var finalData = ""
-    process.stdout.on('data', function (data) {
-        //console.log(data.toString())
-        finalData += data.toString()
-    });
-    process.stderr.on('data', function (data) {
-      //console.log(data.toString());
-      finalData += data.toString()
+app.get('/', (req, res) => {
+  res.render('home', { layout: 'blank' })
+
+})
+
+app.get('/test', (req, res) => {
+  var process = spawn('python', ['./main.py'])
+  var finalData = ""
+  process.stdout.on('data', function (data) {
+    //console.log(data.toString())
+    finalData += data.toString()
   });
-    process.stdout.on('end', function () {
-      res.render('index', {layout: 'default', chartData: finalData})
+  process.stderr.on('data', function (data) {
+    //console.log(data.toString());
+    finalData += data.toString()
+  });
+  process.stdout.on('end', function () {
+    res.render('index', { layout: 'default', chartData: finalData })
   });
   process.on('end', function () {
     ///console.log(finalData)
