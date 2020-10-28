@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var port = 3005;
 var path = require('path');
-var port = 5000;
+var port = 5005;
 var spawn = require('child_process').spawn;
 var hbs = require('express-handlebars');
 var helper = hbs.create({});
@@ -23,7 +23,7 @@ helper.handlebars.registerHelper('json', function (content) {
   return JSON.stringify(content);
 })
 
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 
 app.get('/test', (req,res) => {
     var process = spawn('python', ['./main.py'])
@@ -44,3 +44,5 @@ app.get('/test', (req,res) => {
     //res.send(finalData)
   })
 })
+
+

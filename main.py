@@ -1,6 +1,7 @@
 import pandas as pd
 import sys
 
+
 def test():
     try:
         covid_df = pd.read_csv("covid19.csv") #reads the csv into python pandas

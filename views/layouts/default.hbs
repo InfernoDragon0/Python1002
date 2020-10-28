@@ -2,14 +2,22 @@
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-
+    <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
-    <div id="chart"></div>
-    <div id="monthly"></div>
+    
+       
+    <h1>Covid 19 Analyzer</h1>
+    <div id="chart" class="box"></div>
     <p>chart stuff</p>
+    <br/>
+    <div id="linechart" class="box"></div>
     {{{ body }}}
+   
+
+</div>
+
     
 </body>
 
@@ -28,13 +36,15 @@
         chart: {
             height: 350,
             type: 'bar',
+            foreColor: '#FFFFFF'
+
         },
         dataLabels: {
             enabled: false
         },
         series: [],
         title: {
-            text: 'test',
+            text: 'Monthly Cases',
         },
         noData: {
             text: 'Loading...'
@@ -52,8 +62,6 @@
         name: 'Daily Cases',
         data: seriesData
     }])
-
-
 
 </script>
 
