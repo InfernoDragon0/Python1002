@@ -27,9 +27,8 @@
 
     seriesData = []
 
-    for (var json in testjson) {
-        seriesData.push({ x: testjson[json].Date, y: testjson[json]["Daily Confirmed"] })
-        //seriesData.push()
+    for (var json in testjson) { // this is test bar chart
+        seriesData.push({ x: testjson[json].Date, y: testjson[json]["Daily Confirmed"]})
     }
 
     var options = {
