@@ -9,6 +9,18 @@ def test():
         cv_dataset2 = covid_df[["Date","Daily Confirmed", "Cumulative Confirmed", "Daily Discharged", "Still Hospitalised", "In Isolation MOH report", "Total Completed Isolation MOH report"]] 
         cv_droprows = covid_df.drop(covid_df.index[ :148])
 
+        cv_datasetAll = cv_dataset2.drop(covid_df.index[ :148])
+        dfAll = cv_datasetAll.rename(columns={
+            "Date": "a", 
+            "Daily Confirmed": "b",
+            "Cumulative Confirmed": "c",
+            "Daily Discharged": "d",
+            "Still Hospitalised": "e",
+            "In Isolation MOH report": "f",
+            "Total Completed Isolation MOH report": "g"
+            })
+        fullChart = dfAll.T.to_json()
+
         cv_dataset3 = cv_droprows[["Date","Daily Confirmed"]]
         dfxxx = cv_dataset3.rename(columns={"Date": "x", "Daily Confirmed": "y"})
         dfT = dfxxx.T 
@@ -99,7 +111,8 @@ def test():
             "searchables": output7,
             "summontha": sumoutput4, 
             "summonthb": sumoutput5, 
-            "summonthc": sumoutput6
+            "summonthc": sumoutput6,
+            "fullchart": fullChart
             }
 
         print(combinedOut)

@@ -47,6 +47,11 @@
         <p>dsadasda</p>
     </div>
 
+    <div class="chart-wrapper">
+        <div id="chart4" class="box"></div>
+        <p>dsadasda</p>
+    </div>
+
     <p style="font-size:15px;">Key highlights from phrase 2</p>
     <div class="summary1">
 
@@ -85,11 +90,11 @@
 
 <script>
     function myFunction() {
-        var number = getreoverRate + "%";
-        document.getElementById("myText").innerHTML = number;
-        var activecase = getactivecases;
-        document.getElementById("activecase").innerHTML = activecase;
-        var recoveredcases = getrecoveredcases;
+        var number = getreoverRate + "%"
+        document.getElementById("myText").innerHTML = number
+        var activecase = getactivecases
+        document.getElementById("activecase").innerHTML = activecase
+        var recoveredcases = getrecoveredcases
         document.getElementById("recovered").innerHTML = recoveredcases
     }
 
@@ -192,6 +197,8 @@
     seriesBSum = testjson['summonthb']
     seriesCSum = testjson['summonthc']
 
+    seriesAll = JSON.parse(testjson['fullchart'])
+
     for (var json in seriesA) { // this is test bar chart
         seriesDataA.push({ x: seriesA[json].x, y: seriesA[json].y })
     }
@@ -230,18 +237,30 @@
         seriesDataCmonth.push({ tempMonthC })
     }
 
-    for (var json in seriesB) { // this is test bar chart
+    for (var json in seriesB) {
         seriesDataB.push({ x: seriesB[json].x, y: seriesB[json].y })
         seriesDataB2.push({ x: seriesB[json].x, y: seriesB[json].z })
     }
 
-    for (var json in seriesC) { // this is test bar chart
+    for (var json in seriesC) {
         seriesDataC.push({ x: seriesC[json].x, y: seriesC[json].y })
     }
 
-    //for (var json in seriesC) { // this is test bar chart
-    //    seriesDataC.push({ x: seriesC[json].x, y: seriesC[json].y })
-    //}
+    tempFilterb = []
+    tempFilterc = []
+    tempFilterd = []
+    tempFiltere = []
+    tempFilterf = []
+    tempFilterg = []
+    for (var json in seriesAll) {
+        tempFilterb.push({ x: seriesAll[json].a, y: seriesAll[json].b })
+        tempFilterc.push({ x: seriesAll[json].a, y: seriesAll[json].c })
+        tempFilterd.push({ x: seriesAll[json].a, y: seriesAll[json].d })
+        tempFiltere.push({ x: seriesAll[json].a, y: seriesAll[json].e })
+        tempFilterf.push({ x: seriesAll[json].a, y: seriesAll[json].f })
+        tempFilterg.push({ x: seriesAll[json].a, y: seriesAll[json].g })
+    }
+
 
     var options1 = {
         chart: {
@@ -344,6 +363,28 @@
         }
     }
 
+    var options4 = {
+        chart: {
+            height: 350,
+            type: 'bar',
+            foreColor: '#FFFFFF'
+
+        },
+        dataLabels: {
+            enabled: false
+        },
+        series: [],
+        title: {
+            text: 'Build your own chart',
+        },
+        noData: {
+            text: 'Loading...'
+        },
+        xaxis: {
+            tickAmount: 4,
+        }
+    }
+
     var chart1 = new ApexCharts(
         document.querySelector("#chart1"),
         options1
@@ -359,9 +400,15 @@
         options3
     );
 
-    chart1.render();
-    chart2.render();
-    chart3.render();
+    var chart4 = new ApexCharts(
+        document.querySelector("#chart4"),
+        options4
+    );
+
+    chart1.render()
+    chart2.render()
+    chart3.render()
+    chart4.render()
 
     chart1.updateSeries([{
         name: 'Daily Cases',
@@ -380,6 +427,31 @@
         name: 'Daily Cases3',
         data: seriesDataC
     }])
+
+    chart4.updateSeries([{
+        name: 'Daily Confirmed',
+        data: tempFilterb,
+    }, {
+        name: 'Cumulative Confirmed',
+        data: tempFilterc
+    },
+    {
+        name: 'Daily Discharged',
+        data: tempFilterd
+    },
+    {
+        name: 'Still Hospitalised',
+        data: tempFiltere
+    },
+    {
+        name: 'In Isolation MOH report',
+        data: tempFilterf
+    },
+    {
+        name: 'Total Completed Isolation MOH report',
+        data: tempFilterg
+    },
+    ])
 
     var selectBox = document.getElementById('chartfilter');
 
