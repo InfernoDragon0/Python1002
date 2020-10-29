@@ -53,6 +53,69 @@ h1, h2, h3, h4, h5, h6, strong {
   color: #fff;
 }
 
+.monthlybutton_color{
+  background-color: #0396FF;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.monthlybutton_color:hover {
+  background-color: #555555;
+  color: white;
+}
+
+
+.sumbutton_color{
+  background-color: #FD6585;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.sumbutton_color:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.dd{
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 3px solid rgb(0, 0, 0);
+  margin-bottom: 12px;
+}
+.dailybutton_color{
+  background-color: #5961F9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.dailybutton_color:hover {
+  background-color: #555555;
+  color: white;
+}
 
 .sparkboxes .box1 {
   background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);

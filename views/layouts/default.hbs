@@ -3,94 +3,101 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/home.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body onload="myFunction()">
     {{{body}}}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+        <select name="monthly" id="monthly" class="dd">
+            <option value="0">Select Month filter</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+    </select>
+  
+    <div style="width:100%">
+    <button onclick="monthlyData()" class="monthlybutton_color">View monthly data</button>
+    <button onclick="monthlySumData()" class="sumbutton_color">View month summation data</button>
+    <button onclick="dailyData()" class="dailybutton_color">View daily data</button>
+    </div>
     <div class="chart-wrapper">
-        <p>Covid 19 Analyzer</p>
         <div id="chart1" class="box"></div>
         <p>Short description about the data</p>
     </div>
 
     <div class="chart-wrapper">
-        <p>Covid 20 Analyzer</p>
         <div id="chart2" class="box"></div>
         <p>asdasdad</p>
     </div>
 
 
     <div class="chart-wrapper">
-        <p>Covid 21 Analyzer</p>
         <div id="chart3" class="box"></div>
         <p>dsadasda</p>
     </div>
 
-    <p>Select Month filter
-        <select name="monthly" id="monthly">
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <button onclick="monthlyData()">Press to view monthly data</button>
-        </p>
-    <button onclick="monthlySumData()">Press to view month summation data</button>
-    <button onclick="dailyData()">Press to daily data</button>
+   <p style="font-size:15px;">Key highlights from phrase 2</p>
+    <div class="summary1">
+        
 
-    <div class="customchart">
+            <div class="stats1">
+            <p class="summaryheader center" id="myText" style="font-size: 30px;"></p>
+            <p class="center">Recovery Rate</p>
+        </div>
+        <div class="stats1">
+            <p class="summaryheader center" id="activecase" style="font-size: 30px"></p>
+            <p class="center">Active Cases</p>
+        </div>
+
+        <div class="stats1">
+            <p class="summaryheader center" id="recovered" style="font-size: 30px"></p>
+            <p class="center">Recovered Cases</p>
+        </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <button class="button button5" >Show analyze result</button>
+    </div>
+
+    <!--<div class="customchart">
         <p>Filter/Build your own chart (this is not working yet, will it ever be coded idk)</p>
         <select name="chartfilter" id="chartfilter" multiple>
 
         </select>
 
         <div id="chartcustom" class="box"></div>
-    </div>
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
-    <img src="test.gif" style="float:left;" />
+    </div> -->
+   
 </body>
 
 <script>
+    function myFunction() {
+      var number = getreoverRate + "%";
+      document.getElementById("myText").innerHTML = number;
+      var activecase = getactivecases;
+      document.getElementById("activecase").innerHTML = activecase;
+      var recoveredcases = getrecoveredcases;
+      document.getElementById("recovered").innerHTML = recoveredcases
+    }
+
     function monthlyData() {
         var sel = document.getElementById("monthly").value
+         if(sel == '0'){
+                alert('Please choose a valid month')
+        }
         chart1.updateSeries([{
             name: 'Daily Cases',
             data: seriesDataAmonth[sel - 6].tempMonthA
@@ -175,7 +182,10 @@
     seriesA = JSON.parse(testjson['a'])
     seriesB = JSON.parse(testjson['b'])
     seriesC = JSON.parse(testjson['c'])
-
+    getreoverRate = JSON.parse(testjson['d'])
+    getactivecases = JSON.parse(testjson['e'])
+    getrecoveredcases = JSON.parse(testjson['f'])
+    console.log("helollllllllllllllllllllllllll",JSON.parse(testjson['e']))
 
     seriesASum = testjson['summontha']
     seriesBSum = testjson['summonthb']

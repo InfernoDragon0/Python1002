@@ -1,6 +1,7 @@
 import pandas as pd
 import sys
 import datetime
+import mod
 
 def test():
     try:
@@ -15,7 +16,14 @@ def test():
 
         cv_dataset3["DateN"] = pd.to_datetime(cv_dataset3.Date, format='%d-%b')
         dfxxx = cv_dataset3.rename(columns={"Date": "x", "Daily Confirmed": "y"})
+        getrecoverRateinpercent = mod.getrecovered()
+        ouputRecoverRatePercent = getrecoverRateinpercent
 
+        getactivecases = mod.getactivecases()
+        outputactivecases = getactivecases
+
+        getrecoveredcases = mod.getdailyrecoved()
+        outputrecoveredcases = getrecoveredcases
         #Loop for monthly sorting
         output4 = {}
         sumoutput4 = {} 
@@ -82,6 +90,9 @@ def test():
             "a": output, 
             "b": output2, 
             "c": output3, 
+            "d":ouputRecoverRatePercent,
+            "e":outputactivecases,
+            "f": outputrecoveredcases,
             "sortmontha": output4, 
             "sortmonthb": output5, 
             "sortmonthc": output6, 

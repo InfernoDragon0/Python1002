@@ -4,22 +4,39 @@ import sys
 
 def getSum():
     covid_df = pd.read_csv("covid19.csv")
-    cv_dataset3 = covid_df[["Daily Confirmed"]]
-    df = cv_dataset3.sum()
-    #cv_dataset3["Date"] = cv_dataset3.Date.str[3:]
-    #c = cv_dataset3.columns.difference(['Daily Confirmed']).tolist()
-    #df = cv_dataset3.groupby(c, as_index=False).sum()
-    print(df)
-    sys.stdout.flush()
+    df = covid_df['Cumulative Confirmed'].iloc[[-1]]
+    summationoftotaldailycases = int(df)
+    return(summationoftotaldailycases)
 
-getSum()
+
+def getrecovered():
+    covid_df = pd.read_csv("covid19.csv")
+    df = covid_df['Cumulative Discharged'].iloc[[-1]]
+    recoverRate = (int(df)/getSum()*100)
+    return(int(recoverRate))
+
 
 def getactivecases():
     covid_df = pd.read_csv("covid19.csv")
-    cv_getactivecases = covid_df[["Still Hospitalised", "In Isolation MOH report"]]
-    sumofstillhospitalised = cv_getactivecases["Still Hospitalised"]
-    sumofininsolation = cv_getactivecases["In Isolation MOH report"]
-    totalactivecase = sumofstillhospitalised + sumofininsolation # need to remove null value before adding
-    print(totalactivecase)
+    cv_droprows = covid_df.drop(covid_df.index[ :148])
+    cv_getactivecases = cv_droprows[["Still Hospitalised", "In Isolation MOH report"]]
+    droppedcv_getactivecases= cv_getactivecases.dropna(axis=0)
+    summationofstillhos = droppedcv_getactivecases["Still Hospitalised"].sum()
+    summationIsolation = droppedcv_getactivecases["In Isolation MOH report"].sum()
+    summationofactivecases = summationofstillhos + summationIsolation
+    return(int(summationofactivecases))
 
-getactivecases()
+
+def getdailyrecoved(): # since phase 2
+    covid_df = pd.read_csv("covid19.csv")
+    cv_droprows = covid_df.drop(covid_df.index[ :148])
+    cv_getactivecases = cv_droprows[["Daily Discharged", "Daily Deaths"]]
+    droppedcv_getactivecases= cv_getactivecases.dropna(axis=0)
+    summationofdd = droppedcv_getactivecases["Daily Discharged"].sum()
+    summationofddd = droppedcv_getactivecases["Daily Deaths"].sum()
+    summationdailyrecovered = summationofdd + summationofddd
+    return(int(summationdailyrecovered))
+
+
+
+
