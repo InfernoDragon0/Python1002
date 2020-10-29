@@ -18,25 +18,16 @@ def getrecovered():
 
 def getactivecases():
     covid_df = pd.read_csv("covid19.csv")
-    cv_droprows = covid_df.drop(covid_df.index[ :148])
-    cv_getactivecases = cv_droprows[["Still Hospitalised", "In Isolation MOH report"]]
-    droppedcv_getactivecases= cv_getactivecases.dropna(axis=0)
-    summationofstillhos = droppedcv_getactivecases["Still Hospitalised"].sum()
-    summationIsolation = droppedcv_getactivecases["In Isolation MOH report"].sum()
-    summationofactivecases = summationofstillhos + summationIsolation
-    return(int(summationofactivecases))
+    df = covid_df['Still Hospitalised'].iloc[[-1]]
+    df1 = covid_df['In Isolation MOH report'].iloc[[-1]]
+    activecase = int(df) + int(df1)
+    return(activecase)
 
 
-def getdailyrecoved(): # since phase 2
+def getdailyrecoved(): 
     covid_df = pd.read_csv("covid19.csv")
-    cv_droprows = covid_df.drop(covid_df.index[ :148])
-    cv_getactivecases = cv_droprows[["Daily Discharged", "Daily Deaths"]]
-    droppedcv_getactivecases= cv_getactivecases.dropna(axis=0)
-    summationofdd = droppedcv_getactivecases["Daily Discharged"].sum()
-    summationofddd = droppedcv_getactivecases["Daily Deaths"].sum()
-    summationdailyrecovered = summationofdd + summationofddd
-    return(int(summationdailyrecovered))
-
+    df = covid_df['Cumulative Discharged'].iloc[[-1]]
+    return(int(df))
 
 
 
