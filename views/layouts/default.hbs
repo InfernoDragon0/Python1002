@@ -4,7 +4,7 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/home.css" />
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -12,24 +12,24 @@
 
 <body onload="myFunction()">
     {{{body}}}
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
 
-        <select name="monthly" id="monthly" class="dd">
-            <option value="0">Select Month filter</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
+    <select name="monthly" id="monthly" class="dd">
+        <option value="0">Select Month filter</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
     </select>
-  
+
     <div style="width:100%">
-    <button onclick="monthlyData()" class="monthlybutton_color">View monthly data</button>
-    <button onclick="monthlySumData()" class="sumbutton_color">View month summation data</button>
-    <button onclick="dailyData()" class="dailybutton_color">View daily data</button>
+        <button onclick="monthlyData()" class="monthlybutton_color">View monthly data</button>
+        <button onclick="monthlySumData()" class="sumbutton_color">View month summation data</button>
+        <button onclick="dailyData()" class="dailybutton_color">View daily data</button>
     </div>
     <div class="chart-wrapper">
         <div id="chart1" class="box"></div>
@@ -47,11 +47,11 @@
         <p>dsadasda</p>
     </div>
 
-   <p style="font-size:15px;">Key highlights from phrase 2</p>
+    <p style="font-size:15px;">Key highlights from phrase 2</p>
     <div class="summary1">
-        
 
-            <div class="stats1">
+
+        <div class="stats1">
             <p class="summaryheader center" id="myText" style="font-size: 30px;"></p>
             <p class="center">Recovery Rate</p>
         </div>
@@ -64,12 +64,12 @@
             <p class="summaryheader center" id="recovered" style="font-size: 30px"></p>
             <p class="center">Recovered Cases</p>
         </div>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <button class="button button5" >Show analyze result</button>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <button class="button button5">Show analyze result</button>
     </div>
 
     <!--<div class="customchart">
@@ -80,23 +80,24 @@
 
         <div id="chartcustom" class="box"></div>
     </div> -->
-   
+
 </body>
 
 <script>
     function myFunction() {
-      var number = getreoverRate + "%";
-      document.getElementById("myText").innerHTML = number;
-      var activecase = getactivecases;
-      document.getElementById("activecase").innerHTML = activecase;
-      var recoveredcases = getrecoveredcases;
-      document.getElementById("recovered").innerHTML = recoveredcases
+        var number = getreoverRate + "%";
+        document.getElementById("myText").innerHTML = number;
+        var activecase = getactivecases;
+        document.getElementById("activecase").innerHTML = activecase;
+        var recoveredcases = getrecoveredcases;
+        document.getElementById("recovered").innerHTML = recoveredcases
     }
 
     function monthlyData() {
         var sel = document.getElementById("monthly").value
-         if(sel == '0'){
-                alert('Please choose a valid month')
+        if (sel == '0') {
+            alert('Please choose a valid month')
+            return
         }
         chart1.updateSeries([{
             name: 'Daily Cases',
@@ -185,7 +186,7 @@
     getreoverRate = JSON.parse(testjson['d'])
     getactivecases = JSON.parse(testjson['e'])
     getrecoveredcases = JSON.parse(testjson['f'])
-    console.log("helollllllllllllllllllllllllll",JSON.parse(testjson['e']))
+    console.log("helollllllllllllllllllllllllll", JSON.parse(testjson['e']))
 
     seriesASum = testjson['summontha']
     seriesBSum = testjson['summonthb']
@@ -238,9 +239,9 @@
         seriesDataC.push({ x: seriesC[json].x, y: seriesC[json].y })
     }
 
-    for (var json in seriesC) { // this is test bar chart
-        seriesDataC.push({ x: seriesC[json].x, y: seriesC[json].y })
-    }
+    //for (var json in seriesC) { // this is test bar chart
+    //    seriesDataC.push({ x: seriesC[json].x, y: seriesC[json].y })
+    //}
 
     var options1 = {
         chart: {
@@ -283,7 +284,24 @@
             text: 'Loading...'
         },
         xaxis: {
-            tickAmount: 4
+            tickAmount: 4,
+            labels: {
+                formatter: function (value) {
+                    switch (value) {
+                        case 1:
+                            return "Jun"
+                        case 1.75:
+                            return "Jul"
+                        case 2.5:
+                            return "Aug"
+                        case 3.25:
+                            return "Sep"
+                        case 4:
+                            return "Oct"
+                    }
+                    return value;
+                }
+            }
         }
     }
 
@@ -305,7 +323,24 @@
             text: 'Loading...'
         },
         xaxis: {
-            tickAmount: 4
+            tickAmount: 4,
+            labels: {
+                formatter: function (value) {
+                    switch (value) {
+                        case 1:
+                            return "Jun"
+                        case 1.75:
+                            return "Jul"
+                        case 2.5:
+                            return "Aug"
+                        case 3.25:
+                            return "Sep"
+                        case 4:
+                            return "Oct"
+                    }
+                    return value;
+                }
+            }
         }
     }
 
