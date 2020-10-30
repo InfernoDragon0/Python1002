@@ -41,6 +41,11 @@ def test():
         getrecoveredcases = mod.getdailyrecoved()
         outputrecoveredcases = getrecoveredcases
 
+        getsumoftotal = mod.getSum()
+        getsumofrecovered = mod.getrecoveredcases()
+
+        getcummulativeDeath = mod.getdeath()
+
         fig1 = mod.getall()[0]
         fig2 = mod.getall()[1]
         fig3 = mod.getall()[2]
@@ -114,9 +119,12 @@ def test():
             "d":ouputRecoverRatePercent,
             "e":outputactivecases,
             "f": outputrecoveredcases,
+            "g" : getsumofrecovered,
+            "death": getcummulativeDeath,
             "fig1": fig1, 
             "fig2": fig2, 
             "fig3": fig3,
+            "t": getsumoftotal,
             "sortmontha": output4, 
             "sortmonthb": output5, 
             "sortmonthc": output6, 

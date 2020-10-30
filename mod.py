@@ -15,6 +15,15 @@ def getrecovered():
     recoverRate = (int(df)/getSum()*100)
     return(int(recoverRate))
 
+def getrecoveredcases():
+    covid_df = pd.read_csv("covid19.csv")
+    df = covid_df['Cumulative Discharged'].iloc[[-1]] 
+    return(int(df))
+
+def getdeath():
+    covid_df = pd.read_csv("covid19.csv")
+    df = covid_df['Cumulative Deaths'].iloc[[-1]]
+    return(int(df))
 
 def getactivecases():
     covid_df = pd.read_csv("covid19.csv")
@@ -45,5 +54,6 @@ def getfig3desc():
 def getall():
     arraysentece = [str(getfigdesc()), str(getfig2desc()), str(getfig3desc())]
     return(arraysentece)
+
 
 

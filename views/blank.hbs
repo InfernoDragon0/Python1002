@@ -1,8 +1,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/home.css" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/home.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -10,7 +11,7 @@
     <title>COVID 19 Deaths Datasets</title>
 </head>
 
-<body>
+<body onload="myFunction()">
     <div class="topbar">
         <div class="logo"></div>
         <div class="nav">
@@ -64,20 +65,20 @@
         <p class="description center">Click on the summary to view in depth charts</p>
         <br>
         <div class="stats">
-            <p class="summaryheader center">57987</p>
+            <p class="summaryheader center" id="gettotalcases"></p>
             <p class="center">Total Cases</p>
         </div>
         <div class="stats">
-            <p class="summaryheader center">104</p>
+            <p class="summaryheader center" id="activecases"></p>
             <p class="center">Active Cases</p>
 
         </div>
         <div class="stats">
-            <p class="summaryheader center">57883</p>
+            <p class="summaryheader center" id="getrecoveredcases"></p>
             <p class="center">Recoveries</p>
         </div>
         <div class="stats">
-            <p class="summaryheader center">28</p>
+            <p class="summaryheader center" id="getDeath"></p>
             <p class="center">Deaths</p>
         </div>
 
@@ -135,6 +136,25 @@
 </body>
 
 <script>
+    function myFunction() {
+        var activecase = getactivecases
+        document.getElementById("activecases").innerHTML = activecase
+        var totalcases = gettotalcases 
+        document.getElementById("gettotalcases").innerHTML = totalcases
+        var recoveredcases = getrecoveredcases
+        document.getElementById("getrecoveredcases").innerHTML = recoveredcases
+        var deathcases = getdeathcases
+        document.getElementById("getDeath").innerHTML = getdeathcases
+
+    }
+    var testjson = {{{ chartData }}}
+    console.log(testjson)
+    getactivecases = JSON.parse(testjson['e'])
+    gettotalcases = JSON.parse(testjson['t'])
+    getrecoveredcases = JSON.parse(testjson['g'])
+    getdeathcases = JSON.parse(testjson['death'])
+    console.log("helollllllllllllllllllllllllll",getrecoveredcases)
+
     //sample data, remove when have actual data 
     var options = {
         chart: {

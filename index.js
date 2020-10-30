@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var port = 3005;
 var path = require('path');
-var port = 5005;
+var port = 5006;
 var spawn = require('child_process').spawn;
 var hbs = require('express-handlebars');
 var helper = hbs.create({});
@@ -27,7 +27,19 @@ app.use(express.static(__dirname + '/public'))
 
 
 app.get('/', (req, res) => {
-  res.render('home', { layout: 'blank' })
+  var process = spawn('python', ['./main.py'])
+  var finalData = ""
+  process.stdout.on('data', function (data) {
+    finalData += data.toString()
+  });
+  process.stderr.on('data', function (data) {
+    console.log(data.toString());
+  });
+  process.stdout.on('end', function () {
+    res.render('blank', { layout: 'home', chartData: finalData.replace("\r\n", "") })
+  });
+  process.on('end', function () {
+  })
 
 })
 
