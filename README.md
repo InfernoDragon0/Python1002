@@ -3,7 +3,12 @@
 - NodeJS (LTS 14.15.0 or above) https://nodejs.org/en/
 
 Python Libraries
-- Pandas 1.1.3 or above using pip (pip install pandas) OR using anaconda (conda install pandas)
+- Pandas 1.1.3 or above using pip 
+        
+        pip install pandas
+- OR using anaconda 
+        
+        conda install pandas
 
 NodeJS Libraries
 - Run (npm install) to install all the libraries required (ExpressJS and HandleBars)
