@@ -1,0 +1,230 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>COVID 19 Deaths Datasets</title>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="logo"></div>
+        <div class="nav">
+            <a class="links" href="/data">Datasets</a>
+        </div>
+    </div>
+    <div class="heroimage">
+        <div class="centerheading">
+            <h1>Welcome to COVID 19 Datasets</h1>
+            <p>About COVID 19 Datasets...</p>
+            <a href="/data">
+                <div class="herobutton">View Datasets</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="aboutcovid">
+
+        <div class="sampledatasets">
+            <div class="data" id="data1">
+
+            </div>
+            <div class="data" id="data2">
+
+            </div>
+        </div>
+
+        <div class="rightdesc">
+            <p class="heading"><i class="material-icons md-48">insights</i></p>
+            <p class="heading">COVID 19 Datasets </p>
+            <p class="description">We have developed an interactive dashboard program that allows owners of various bars, 
+                karaoke lounges and nightclubs to analyse the severity of Singapore’s Covid-19 situation and estimate when they are able to start operations.
+                This data and charts can help with various company on </p>
+            <br>
+
+            <p class="description">View more like this in our datasets page</p>
+            <br>
+            <a href="/data">
+            <div class="altbutton">Datasets</div>
+            </a>
+            
+        </div>
+    </div>
+
+    <div class="summary">
+        <p class="bigheading">Statistics at a glance</p>
+        <br>
+        <p class="description center">Click on the summary to view in depth charts</p>
+        <br>
+        <div class="stats">
+            <p class="summaryheader center">57987</p>
+            <p class="center">Total Cases</p>
+        </div>
+        <div class="stats">
+            <p class="summaryheader center">104</p>
+            <p class="center">Active Cases</p>
+
+        </div>
+        <div class="stats">
+            <p class="summaryheader center">57883</p>
+            <p class="center">Recoveries</p>
+        </div>
+        <div class="stats">
+            <p class="summaryheader center">28</p>
+            <p class="center">Deaths</p>
+        </div>
+
+    </div>
+
+    <div class="features">
+        <div class="featuresleft">
+            <p class="heading"><i class="material-icons md-48">dashboard</i></p>
+            <p class="heading">Dataset Features</p>
+            <p class="description">description about Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos
+                adipisci commodi aliquid aliquam aperiam placeat aut sequi suscipit veniam blanditiis tempore hic iusto,
+                accusamus porro neque vero incidunt odio odit? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Commodi doloribus facere reiciendis fuga fugit rerum dolorem explicabo, necessitatibus vitae quidem aut,
+                deserunt, saepe repudiandae voluptate obcaecati adipisci voluptates soluta vero!</p>
+        </div>
+
+        <div class="featuresright">
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">view_compact</i></p>
+                <p class="description">View</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">import_export</i></p>
+                <p class="description">Export</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">search</i></p>
+                <p class="description">Search</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">analytics</i></p>
+                <p class="description">Statistics</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">legend_toggle</i></p>
+                <p class="description">Analysis</p>
+            </div>
+            <div class="featurebox">
+                <p class="heading"><i class="material-icons md-24 accent">science</i></p>
+                <p class="description">Research</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="prefooter">'</div>
+      
+      <div class="footer">
+          <p class="center">Copyright &copy; 2020</p>
+          <p class="description">
+          <a class="ln center" href="/data">Datasets</a>
+          </p>
+      </div>
+
+</body>
+
+<script>
+    //sample data, remove when have actual data 
+    var options = {
+        chart: {
+            height: 200,
+            type: "line",
+            stacked: false
+        },
+        dataLabels: {
+            enabled: false
+        },
+        colors: ["#FF1654", "#247BA0"],
+        series: [
+            {
+                name: "Series A",
+                data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6]
+            },
+            {
+                name: "Series B",
+                data: [20, 29, 37, 36, 44, 45, 50, 58]
+            }
+        ],
+        stroke: {
+            width: [4, 4]
+        },
+        plotOptions: {
+            bar: {
+                columnWidth: "20%"
+            }
+        },
+        xaxis: {
+            categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
+        },
+        yaxis: [
+            {
+                axisTicks: {
+                    show: true
+                },
+                axisBorder: {
+                    show: true,
+                    color: "#FF1654"
+                },
+                labels: {
+                    style: {
+                        colors: "#FF1654"
+                    }
+                },
+                title: {
+                    text: "Series A",
+                    style: {
+                        color: "#FF1654"
+                    }
+                }
+            },
+            {
+                opposite: true,
+                axisTicks: {
+                    show: true
+                },
+                axisBorder: {
+                    show: true,
+                    color: "#247BA0"
+                },
+                labels: {
+                    style: {
+                        colors: "#247BA0"
+                    }
+                },
+                title: {
+                    text: "Series B",
+                    style: {
+                        color: "#247BA0"
+                    }
+                }
+            }
+        ],
+        tooltip: {
+            shared: false,
+            intersect: true,
+            x: {
+                show: false
+            }
+        },
+        legend: {
+            horizontalAlign: "left",
+            offsetX: 40
+        }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#data1"), options);
+    chart.render();
+
+    var chart2 = new ApexCharts(document.querySelector("#data2"), options);
+    chart2.render();
+</script>
+
+</html>
