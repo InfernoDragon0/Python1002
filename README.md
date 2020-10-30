@@ -11,7 +11,10 @@ Python Libraries
         conda install pandas
 
 NodeJS Libraries
-- Run (npm install) to install all the libraries required (ExpressJS and HandleBars)
+- Run 
+
+        npm install       
+- to install all the libraries required (ExpressJS and HandleBars)
 
 # Installation Guide
 1. Unzip the file into any location
