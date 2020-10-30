@@ -7,7 +7,7 @@ var spawn = require('child_process').spawn;
 var hbs = require('express-handlebars');
 var helper = hbs.create({});
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log("server started in port " + port)
 })
 app.set('view engine', 'hbs');
