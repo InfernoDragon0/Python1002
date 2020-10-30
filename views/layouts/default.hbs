@@ -13,14 +13,17 @@
 <body onload="myFunction()">
     {{{body}}}
 
-    <div>
+     <br/>
         <br/>
         <br/>
         <br/>
-        <br/>
-        <h2>Key highlights from phrase 2</h2>
+       
+    <div class="summary">
+     
+        <p class="bigheading">Key highlights from phrase 2</p>
+        <br>
      <div class="stats1">
-        <p class="summaryheader center" id="myText" style="font-size: 30px;"></p>
+        <p class="summaryheader center" id="myText" style="font-size: 30px"></p>
         <p class="center">Recovery Rate</p>
     </div>
     <div class="stats1">
@@ -32,9 +35,23 @@
         <p class="summaryheader center" id="recovered" style="font-size: 30px"></p>
         <p class="center">Recovered Cases</p>
     </div>
-
-      
+      </div>
     </div>
+     <select name="monthly" id="monthly" class="dd">
+        <option value="0">Select Month filter</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+    </select>
+       <div style="100%">
+        <button onclick="monthlyData()">View monthly data</button>
+        <button onclick="dailyData()">View daily data</button>
+        <button onclick="monthlySumData()" style="float:right">View month summation data</button>
+        
+    </div>
+    <br/>
         <div class="chart-wrapper" style="width:33%">
             <div>
             <div id="chart1" class="box"></div>
@@ -49,7 +66,6 @@
            <!-- <p style="margin-left: 20px; margin-right:20px">The daily active cases constitute those still hospitalised and in isolation. Having a greater number in isolation compared to those still hospitalised is a good sign as it shows that the majority of active cases are in a stable health state which is easier to recover.</p>-->
         </div>
 
-
         <div class="chart-wrapper" style="width:33%">
             <div id="chart3" class="box"></div>
             <button class="button button5" id="my2">Find out more</button>
@@ -60,34 +76,27 @@
     <br/>
     <!-- The Modal -->
     <div id="myModal" class="modal" >
+        <br/>
+        <br/>
         <span class="close">&times;</span>
         <p class="modal-content" id="img01"></p>
     </div>
      <div id="myModal1" class="modal" >
+         <br/>
+        <br/>
         <span class="close1">&times;</span>
         <p class="modal-content" id="img02"></p>
     </div>
      <div id="myModal2" class="modal" >
+         <br/>
+        <br/>
         <span class="close2">&times;</span>
         <p class="modal-content" id="img03"></p>
     </div>
-    <select name="monthly" id="monthly" class="dd">
-        <option value="0">Select Month filter</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-    </select>
-
-    <div style="width:100%">
-        <button onclick="monthlyData()">View monthly data</button></br>
-        <button onclick="monthlySumData()">View month summation data</button>
-        <button onclick="dailyData()">View daily data</button>
-    </div>
+    
 
 
-    <div class="chart-wrapper" style="width:100%; margin-bottom:20px">
+    <div class="chart-wrapper1" style="width:100%;">
         <div id="chart4" class="box"></div>
         <p>Users are able to build their own chart to view and analyze the different statistic of charts. There are different column for user to choose from, this way users are able to analyse the different data base on what they need. </p>
     </div>

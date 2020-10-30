@@ -244,21 +244,29 @@ a {
     width: 20%;
     height: 100px;
     padding: 1.5%;
-    margin: 5%;
+    margin: 4.5%;
     background-color: white;
     box-shadow: 0 11px 43px 0 rgba(52, 55, 65, 0.1);
     float: left;
     border: 2px solid coral;
-    transition: all 0.2s linear; 
+    border-right:10px solid coral;
+    transition: all 0.2s linear;
+    animation: 1s ease-out 0s 1 pop-in; 
 }
 .stats:hover {
     -webkit-transform: translateX(0) translateY(-5px);
     transform: translateX(0) translateY(-5px);
 }
-
-.center {
-    text-align: center;
+.stats1:hover {
+    -webkit-transform: translateX(0) translateY(-10px);
+    transform: translateX(0) translateY(-10px);
 }
+
+
+    @keyframes pop-in {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+    }
 
 .summaryheader {
     font-size: 24px;

@@ -4,12 +4,18 @@ body {
 }
 
 .chart-wrapper {
-  padding-top: 65px;
-
   float: left;
   width: 33%;
   text-align: center;
 }
+
+.chart-wrapper1 {
+  padding-top: 50px;
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+
 
 .body-bg {
   background: #F3F4FA !important;
@@ -180,12 +186,13 @@ h1, h2, h3, h4, h5, h6, strong {
   display: none; /* Hidden by default */
   position: relative; /* Stay in place */
   z-index: 1; /* Sit on top */
-  top:20px;/* Location of the box */
+  /* Location of the box */
   margin: 0 auto;
   width: 50%; /* Full width */
   height: 30%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: white; /* Fallback color */
+  border: 3px solid coral;
 }
 
 /* Modal Content (image) */
@@ -194,7 +201,9 @@ h1, h2, h3, h4, h5, h6, strong {
   display: block;
   width: 80%;
   max-width: 700px;
+  position: relative;
   text-align: justify;
+
 }
 
 /* Caption of Modal Image */
