@@ -7,7 +7,9 @@ def test():
     try:
         covid_df = pd.read_csv("covid19.csv") 
         
-       cv_dataset2 = covid_df[["Date","Daily Confirmed", "Cumulative Confirmed", "Daily Discharged", "Still Hospitalised", "In Isolation MOH report", "Total Completed Isolation MOH report"]] 
+        cv_dataset2 = covid_df[["Date","Daily Confirmed", 
+        "Cumulative Confirmed", "Daily Discharged", "Still Hospitalised",
+         "In Isolation MOH report", "Total Completed Isolation MOH report"]] 
 
         cv_droprows = covid_df.drop(covid_df.index[ :148])
 
