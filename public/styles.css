@@ -10,7 +10,8 @@ body {
 }
 
 .chart-wrapper1 {
-  padding-top: 50px;
+  
+  padding-top:20px;
   float: left;
   width: 33%;
   text-align: center;
@@ -60,7 +61,7 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 
 .monthlybutton_color{
-  background-color: #0396FF;
+  background-color: green;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -79,7 +80,7 @@ h1, h2, h3, h4, h5, h6, strong {
 
 
 .sumbutton_color{
-  background-color: #FD6585;
+  background-color: slateblue;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -107,7 +108,7 @@ h1, h2, h3, h4, h5, h6, strong {
   margin-top: 30px;
 }
 .dailybutton_color{
-  background-color: #5961F9;
+  background-color: darkorange;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -117,6 +118,7 @@ h1, h2, h3, h4, h5, h6, strong {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  clear:both;
 }
 
 .dailybutton_color:hover {
@@ -202,6 +204,7 @@ h1, h2, h3, h4, h5, h6, strong {
   width: 80%;
   max-width: 700px;
   position: relative;
+  top: 40px;
   text-align: justify;
 
 }
@@ -221,9 +224,9 @@ h1, h2, h3, h4, h5, h6, strong {
 /* Add Animation */
 .modal-content, #caption {  
   -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
+  -webkit-animation-duration: 0.2s;
   animation-name: zoom;
-  animation-duration: 0.6s;
+  animation-duration: 0.2s;
 }
 
 @-webkit-keyframes zoom {

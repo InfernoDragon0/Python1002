@@ -13,24 +13,42 @@
 <body onload="myFunction()">
     {{{body}}}
 
-    <div>
+    <div class="summary">
         <h1 style="padding-top: 80px; text-align: center">Key highlights from phrase 2</h1>
-        <div class="stats1" style="margin-bottom: -2%; margin-top:1%">
+        <div class="stats1">
             <p class="summaryheader center" id="myText" style="font-size: 40px;"></p>
             <p class="center">Recovery Rate</p>
         </div>
-        <div class="stats1" style="margin-bottom: -2%; margin-top:1%">
+        <div class="stats1">
             <p class="summaryheader center" id="activecase" style="font-size: 40px"></p>
             <p class="center">Active Cases</p>
         </div>
 
-        <div class="stats1" style="margin-bottom: -2%; margin-top:1%">
+        <div class="stats1">
             <p class="summaryheader center" id="recovered" style="font-size: 40px"></p>
             <p class="center">Recovered Cases</p>
         </div>
 
     </div>
-
+    <br/>
+    <br/>
+    <br/>
+     <select style="width:100%" name="monthly" id="monthly" class="dd">
+        <option value="0">Select Month filter</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+    </select>
+     <div>
+        <button  class="monthlybutton_color" onclick="monthlyData()">View monthly data</button>
+     
+        <button class="dailybutton_color" onclick="dailyData()" style="float:right">View daily data</button>
+    
+        <button class="sumbutton_color" onclick="monthlySumData()">View month summation
+            data</button>
+    </div>
     <div class="chart-wrapper" style="width:33%">
         <div>
             <div id="chart1" class="box"></div>
@@ -67,27 +85,13 @@
         <span class="close2">&times;</span>
         <p class="modal-content" id="img03"></p>
     </div>
-    <select style="width:100%" name="monthly" id="monthly" class="dd">
-        <option value="0">Select Month filter</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-    </select>
+   
     
-
-    <div>
-        <button style="background-color:green" class="button" onclick="monthlyData()">View monthly data</button></br>
-        <button style="background-color:slateblue" class="button" onclick="monthlySumData()">View month summation
-            data</button>
-        <button style="background-color:darkorange" class="button" onclick="dailyData()">View daily data</button>
-    </div>
 
 
     <div class="chart-wrapper1" style="width:100%;">
         <div id="chart4" class="box"></div>
-        <p>Users are able to build their own chart to view and analyze the different statistic of charts. There are
+        <p style="text-align:justify;">Users are able to build their own chart to view and analyze the different statistic of charts. There are
             different column for user to choose from, this way users are able to analyse the different data base on what
             they need. </p>
     </div>
