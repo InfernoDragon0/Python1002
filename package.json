@@ -20,6 +20,6 @@
   "dependencies": {
     "apexcharts": "^3.22.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0"
+    "express-handlebars": "^5.2.0"
   }
 }

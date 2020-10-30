@@ -36,6 +36,11 @@ def test():
 
         getrecoveredcases = mod.getdailyrecoved()
         outputrecoveredcases = getrecoveredcases
+
+        fig1 = mod.getall()[0]
+        fig2 = mod.getall()[1]
+        fig3 = mod.getall()[2]
+     
         #Loop for monthly sorting
         output4 = {}
         sumoutput4 = {} 
@@ -105,6 +110,9 @@ def test():
             "d":ouputRecoverRatePercent,
             "e":outputactivecases,
             "f": outputrecoveredcases,
+            "fig1": fig1, 
+            "fig2": fig2, 
+            "fig3": fig3,
             "sortmontha": output4, 
             "sortmonthb": output5, 
             "sortmonthc": output6, 

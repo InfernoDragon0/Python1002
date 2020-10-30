@@ -216,6 +216,20 @@ a {
     transition-duration: 0.4s;
     cursor: pointer;
   }
+  .button[disabled]
+    {
+        background-color: lightgray; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: not-allowed;
+    }
 .stats {
     width: 20%;
     height: 100px;
@@ -230,7 +244,7 @@ a {
     width: 20%;
     height: 100px;
     padding: 1.5%;
-    margin: 1%;
+    margin: 5%;
     background-color: white;
     box-shadow: 0 11px 43px 0 rgba(52, 55, 65, 0.1);
     float: left;

@@ -14,48 +14,12 @@
     {{{body}}}
 
     <div>
-        <div class="chart-wrapper" style="width:33%">
-            <div id="chart1" class="box"></div>
-            <p style="margin-left: 20px; margin-right:20px">This diagram shows the daily cases over a period of time input by users. Users will be able to toggle their view in terms of daily or monthly.  We can identify the trend of the virus such as a sharp increase, steady decrease or constant.</p>
-        </div>
-
-        <div class="chart-wrapper" style="width:34%">
-            <div id="chart2" class="box"></div>
-            <p style="margin-left: 20px; margin-right:20px">The daily active cases constitute those still hospitalised and in isolation. Having a greater number in isolation compared to those still hospitalised is a good sign as it shows that the majority of active cases are in a stable health state which is easier to recover.</p>
-        </div>
-
-
-        <div class="chart-wrapper" style="width:33%">
-            <div id="chart3" class="box"></div>
-            <p style="margin-left: 20px; margin-right:20px">Daily recovered vs daily cases. If ‘daily recovered’ is constantly more than daily cases, and the recovery rate is high, we can infer that Singapore might enter phase 3 soon as the number of active cases would be in the safe zone.</p>
-        </div>
-    </div>
-
-    <select name="monthly" id="monthly" class="dd">
-        <option value="0">Select Month filter</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-    </select>
-
-    <div style="width:100%">
-        <button onclick="monthlyData()" class="monthlybutton_color">View monthly data</button></br>
-        <button onclick="monthlySumData()" class="sumbutton_color">View month summation data</button>
-        <button onclick="dailyData()" class="dailybutton_color">View daily data</button>
-    </div>
-
-
-    <div class="chart-wrapper" style="width:100%; margin-bottom:20px">
-        <div id="chart4" class="box"></div>
-        <p>Users are able to build their own chart to view and analyze the different statistic of charts. There are different column for user to choose from, this way users are able to analyse the different data base on what they need. </p>
-    </div>
-
-    <h2>Key highlights from phrase 2</h2>
-
-
-    <div class="stats1">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h2>Key highlights from phrase 2</h2>
+     <div class="stats1">
         <p class="summaryheader center" id="myText" style="font-size: 30px;"></p>
         <p class="center">Recovery Rate</p>
     </div>
@@ -68,12 +32,67 @@
         <p class="summaryheader center" id="recovered" style="font-size: 30px"></p>
         <p class="center">Recovered Cases</p>
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <button class="button button5">Show analyze result</button>
+
+      
+    </div>
+        <div class="chart-wrapper" style="width:33%">
+            <div>
+            <div id="chart1" class="box"></div>
+            <button class="button button5" id="my">Find out more</button>
+            </div>
+            <!--<p style="margin-left: 20px; margin-right:20px">This diagram shows the daily cases over a period of time input by users. Users will be able to toggle their view in terms of daily or monthly.  We can identify the trend of the virus such as a sharp increase, steady decrease or constant.</p>-->
+        </div>
+
+        <div class="chart-wrapper" style="width:34%">
+            <div id="chart2" class="box"></div>
+            <button class="button button5" id="my1">Find out more</button>
+           <!-- <p style="margin-left: 20px; margin-right:20px">The daily active cases constitute those still hospitalised and in isolation. Having a greater number in isolation compared to those still hospitalised is a good sign as it shows that the majority of active cases are in a stable health state which is easier to recover.</p>-->
+        </div>
+
+
+        <div class="chart-wrapper" style="width:33%">
+            <div id="chart3" class="box"></div>
+            <button class="button button5" id="my2">Find out more</button>
+            <!--<p style="margin-left: 20px; margin-right:20px">Daily recovered vs daily cases. If ‘daily recovered’ is constantly more than daily cases, and the recovery rate is high, we can infer that Singapore might enter phase 3 soon as the number of active cases would be in the safe zone.</p> -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <!-- The Modal -->
+    <div id="myModal" class="modal" >
+        <span class="close">&times;</span>
+        <p class="modal-content" id="img01"></p>
+    </div>
+     <div id="myModal1" class="modal" >
+        <span class="close1">&times;</span>
+        <p class="modal-content" id="img02"></p>
+    </div>
+     <div id="myModal2" class="modal" >
+        <span class="close2">&times;</span>
+        <p class="modal-content" id="img03"></p>
+    </div>
+    <select name="monthly" id="monthly" class="dd">
+        <option value="0">Select Month filter</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+    </select>
+
+    <div style="width:100%">
+        <button onclick="monthlyData()">View monthly data</button></br>
+        <button onclick="monthlySumData()">View month summation data</button>
+        <button onclick="dailyData()">View daily data</button>
+    </div>
+
+
+    <div class="chart-wrapper" style="width:100%; margin-bottom:20px">
+        <div id="chart4" class="box"></div>
+        <p>Users are able to build their own chart to view and analyze the different statistic of charts. There are different column for user to choose from, this way users are able to analyse the different data base on what they need. </p>
+    </div>
+
+    
 
 
 
@@ -87,6 +106,61 @@
     </div> -->
 
 </body>
+<script>
+var modal = document.getElementById("myModal");
+var button = document.getElementById("my");
+var modalImg = document.getElementById("img01");
+button.onclick = function(){
+   modal.style.display = "block";
+   modalImg.src = this.innerHTML.text;
+   document.getElementById("my1").disabled = true;
+   document.getElementById("my2").disabled = true;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+  modal.style.display = "none";
+   document.getElementById("my1").disabled = false;
+   document.getElementById("my2").disabled = false;
+
+}
+</script>
+
+<script>
+var modal1 = document.getElementById("myModal1");
+var button1 = document.getElementById("my1");
+var modalImg1 = document.getElementById("img02");
+button1.onclick = function(){
+   modal1.style.display = "block";
+   modalImg1.src = this.innerHTML.text;
+   document.getElementById("my").disabled = true;
+   document.getElementById("my2").disabled = true;
+
+}
+var span1 = document.getElementsByClassName("close1")[0];
+span1.onclick = function() { 
+  modal1.style.display = "none";
+  document.getElementById("my").disabled = false;
+   document.getElementById("my2").disabled = false;
+}
+</script>
+
+<script>
+var modal2 = document.getElementById("myModal2");
+var button2 = document.getElementById("my2");
+var modalImg2 = document.getElementById("img03");
+button2.onclick = function(){
+   modal2.style.display = "block";
+   modalImg2.src = this.innerHTML.text;
+      document.getElementById("my").disabled = true;
+   document.getElementById("my1").disabled = true;
+}
+var span2 = document.getElementsByClassName("close2")[0];
+span2.onclick = function() { 
+  modal2.style.display = "none";
+   document.getElementById("my").disabled = false;
+   document.getElementById("my1").disabled = false;
+}
+</script>
 
 <script>
     function myFunction() {
@@ -96,6 +170,12 @@
         document.getElementById("activecase").innerHTML = activecase
         var recoveredcases = getrecoveredcases
         document.getElementById("recovered").innerHTML = recoveredcases
+        var fig1desc = getfig1
+        document.getElementById("img01").innerHTML = fig1desc
+        var fig2desc = getfig2
+        document.getElementById("img02").innerHTML = fig2desc
+        var fig3desc = getfig3
+        document.getElementById("img03").innerHTML = fig3desc
     }
 
     function monthlyData() {
@@ -191,7 +271,10 @@
     getreoverRate = JSON.parse(testjson['d'])
     getactivecases = JSON.parse(testjson['e'])
     getrecoveredcases = JSON.parse(testjson['f'])
-    console.log("helollllllllllllllllllllllllll", JSON.parse(testjson['e']))
+    getfig1 = JSON.stringify(testjson['fig1']);
+    getfig2 = JSON.stringify(testjson['fig2']);
+    getfig3 = JSON.stringify(testjson['fig3']);
+    console.log("helollllllllllllllllllllllllll", JSON.stringify(testjson['fig1']))
 
     seriesASum = testjson['summontha']
     seriesBSum = testjson['summonthb']
